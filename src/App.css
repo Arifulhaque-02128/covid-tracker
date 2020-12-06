@@ -1,38 +1,101 @@
-.App {
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  height: 120vh;
+  background-color: white;
   display: flex;
-  flex-direction: column;
+}
+.left-div{
+  width: 60vw;
+  height: 115vh;
+  background-color: whitesmoke;
+  margin: 20px 5px 20px 20px;
+  border-right: 2px solid white;
+}
+.right-div{
+  width: 36vw;
+  height: 115vh;
+  background-color: whitesmoke;
+  margin: 20px 20px 20px 0px;
+}
+
+.app-header{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.cards-item{
+  display: flex;
+  margin: 20px;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+.cards-item > .card {
+  flex: 1;
+}
+.cards-item > .active-style-red {
+  border-top: 10px solid tomato;
+}
+.cards-item > .active-style-green {
+  border-top: 10px solid lightgreen;
+}
+.cards-item > .card:not(:last-child){
+  margin-right: 10px;
+}
+.card-cases{
+  color: black;
+  font-weight: bold;
+  font-size: large;
 }
 
-.App-link {
-  color: #61dafb;
+.table-data{
+  margin: 20px;
+  height: 50vh;
+  overflow: auto;
+}
+.table thead tr th, .table tbody tr td {
+  border: none;
+}
+tbody > tr:nth-child(even){
+  background-color: white;
+}
+.map-div{
+  display: grid;
+  place-items: center;
+}
+.map-container{
+  margin-top: 10px;
+  width: 56vw;
+  height: 65vh;
+}
+@media (max-width: 990px){
+  .app{
+    flex-direction: column;
+    height: 270vh;
+  }
+  .right-div{
+    width: 95vw;
+    height: 150vh;
+    background-color: whitesmoke;
+    margin: 20px 20px 10px 20px;
+  }
+  .left-div{
+    width: 95vw;
+    height: 135vh;
+    background-color: whitesmoke;
+    margin: 20px 20px 0px 20px;
+  }
+  .map-container{
+    width: 90vw;
+    height: 60vh;
+  }
+}
+.popup-style > img{
+  width: 80px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

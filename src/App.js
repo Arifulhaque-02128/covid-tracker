@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { createContext, useState } from 'react';
 import './App.css';
+import LeftContainer from './Components/LeftContainer/LeftContainer';
+import RightContainer from './Components/RightContainer/RightContainer';
+
+export const InfoContext = createContext();
+export const CaseTypeContext = createContext();
 
 function App() {
+
+  const [allCountryInfo, setAllCountryInfo] = useState([]);
+  const [caseType, setCaseType] = useState("cases");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <InfoContext.Provider value={[allCountryInfo, setAllCountryInfo]}>
+      <div className="app">
+        <div className="left-div">
+          <CaseTypeContext.Provider value={[caseType, setCaseType]}>
+            <LeftContainer></LeftContainer>
+          </CaseTypeContext.Provider>
+        </div>
+        <div className="right-div">
+          <CaseTypeContext.Provider value={[caseType, setCaseType]}>
+            <RightContainer></RightContainer>
+          </CaseTypeContext.Provider>
+        </div>
+      </div>
+    </InfoContext.Provider>
   );
 }
 
