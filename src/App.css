@@ -76,17 +76,17 @@ tbody > tr:nth-child(even){
 @media (max-width: 990px){
   .app{
     flex-direction: column;
-    height: 270vh;
+    height: 258vh;
   }
   .right-div{
     width: 95vw;
-    height: 150vh;
+    height: 140vh;
     background-color: whitesmoke;
     margin: 20px 20px 10px 20px;
   }
   .left-div{
     width: 95vw;
-    height: 135vh;
+    height: 115vh;
     background-color: whitesmoke;
     margin: 20px 20px 0px 20px;
   }
@@ -95,6 +95,35 @@ tbody > tr:nth-child(even){
     height: 60vh;
   }
 }
+@media (max-width: 550px){
+  .app{
+    flex-direction: column;
+    height: 270vh;
+  }
+  .right-div{
+    width: 95vw;
+    height: 115vh;
+    background-color: whitesmoke;
+    margin: 20px 20px 10px 20px;
+  }
+  .left-div{
+    width: 95vw;
+    height: 155vh;
+    background-color: whitesmoke;
+    margin: 20px 20px 0px 20px;
+  }
+  .cards-item{
+    display: block;
+    margin: 10px 20px;
+    cursor: pointer;
+  }
+  .card{
+    width: 88vw;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+}
+    /*  style for map popup */
 .popup-style > img{
   width: 80px;
 }

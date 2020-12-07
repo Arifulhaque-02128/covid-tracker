@@ -2,7 +2,7 @@ import React from 'react';
 import { Circle, MapContainer as LeafletMap, Popup, TileLayer } from 'react-leaflet';
 
 const Map = ({ zoom, position, info, caseType }) => {
-
+    console.log(position, zoom);
     return (
         <div>
             <LeafletMap className="map-container" center={position} zoom={zoom} scrollWheelZoom={false}>
@@ -13,6 +13,7 @@ const Map = ({ zoom, position, info, caseType }) => {
                 {
                     info && info.map(({ country, countryInfo, cases, recovered, deaths }) => (
                         <Circle
+                        key={country}
                         center={[countryInfo.lat, countryInfo.long]}
                         pathOptions={caseType==="recovered" ? { color: "lightGreen" } : { color: "tomato" } }
                         radius={(caseType==="cases" && (Math.sqrt(cases)*250)) || (caseType==="recovered" && (Math.sqrt(recovered)*350)) || (caseType==="deaths" && (Math.sqrt(deaths)*1500))}>

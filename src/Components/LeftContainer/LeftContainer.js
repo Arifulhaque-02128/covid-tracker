@@ -11,7 +11,7 @@ const LeftContainer = () => {
     const [countries, setCountries] = useState([]);
     const [country, setCountry] = useState("Worldwide");
     const [info, setInfo] = useState({});
-    const [mapPosition, setMapPosition] = useState({lat: 34.80746, lon: -40.4796});
+    const [mapPosition, setMapPosition] = useState([34.80746, -40.4796]);
     const [mapZoom, setMapZoom] = useState(3);
 
     useEffect( () => {
