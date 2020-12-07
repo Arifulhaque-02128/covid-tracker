@@ -51,7 +51,7 @@ const LeftContainer = () => {
         .then( data => {
             setInfo(data);
             setMapPosition([data.countryInfo.lat, data.countryInfo.long]);
-            setMapZoom(5);
+            setMapZoom(4);
             setCountry(selectedCountry);
         });
         event.preventDefault();
@@ -80,7 +80,7 @@ const LeftContainer = () => {
                 <CardItem caseType={[caseType, setCaseType]} countryInfo={info}></CardItem>
             </div>
             <div className="map-div">
-                <Map caseType={caseType} info={allCountryInfo} zoom={mapZoom} position={mapPosition}></Map>
+                <Map caseType={caseType} info={allCountryInfo} zoom={mapZoom} center={mapPosition}></Map>
             </div>
         </div>
     );

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Circle, MapContainer as LeafletMap, Popup, TileLayer } from 'react-leaflet';
+import ChangeView from './ChangeView';
 
-const Map = ({ zoom, position, info, caseType }) => {
-    console.log(position, zoom);
+const Map = ({ zoom, center, info, caseType }) => {
     return (
         <div>
-            <LeafletMap className="map-container" center={position} zoom={zoom} scrollWheelZoom={false}>
+            <LeafletMap className="map-container" center={center} zoom={zoom} scrollWheelZoom={false}>
+                <ChangeView center={center} zoom={zoom} />
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
