@@ -50,8 +50,15 @@ const LeftContainer = () => {
         .then( res => res.json())
         .then( data => {
             setInfo(data);
-            setMapPosition([data.countryInfo.lat, data.countryInfo.long]);
-            setMapZoom(4);
+            selectedCountry === "Worldwide" 
+            ? 
+                (
+                    setMapPosition([34.80746, -40.4796]) && setMapZoom(3)
+                )
+            :
+                ( 
+                    setMapPosition([data.countryInfo.lat, data.countryInfo.long]) && setMapZoom(4) 
+                )
             setCountry(selectedCountry);
         });
         event.preventDefault();

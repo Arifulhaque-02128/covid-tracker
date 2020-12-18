@@ -101,8 +101,8 @@ const LineGraph = (props) => {
                 {
                     ticks : {
                         min : 0,
-                        max : 700,
-                        stepSize: 100,
+                        max : 1500,
+                        stepSize: 250,
                         callback: function (value) {
                             return `${value}k`;
                         },
@@ -141,8 +141,8 @@ const LineGraph = (props) => {
                 {
                     ticks : {
                         min : 0,
-                        max : 600,
-                        stepSize: 100,
+                        max : 1600,
+                        stepSize: 200,
                         callback: function (value) {
                             return `${value}k`;
                         }
